@@ -17,6 +17,14 @@
 
 <svelte:head>
   <title>Design Procedural: Os desafios na criação de mundos infinitos</title>
+  <meta
+    name="description"
+    content="No reino dos desenvolvimento de jogos e paisagens digitais, uma nova fronteira emerge — uma
+  que transcende as limitações do design tradicional e abre portas para possibilidades
+  ilimitadas. O design procedural é uma técnica que, a partir de um conjunto de regras e
+  parâmetros, gera conteúdo de forma pseudo aleatória e infinita, o qual segue os princípios do
+  criador e, ao mesmo tempo, é único e imprevisível, mas também determinístico. Autor: Guilherme Marcondes. Estudos em Design. ULisboa."
+  />
 </svelte:head>
 
 <Noise />
@@ -24,7 +32,7 @@
 <article class="container">
   <header>
     <h1>Design Procedural: Os Desafios na criação de mundos infinitos</h1>
-    <p class="muted">Guilherme Marcondes · Janeiro de 2024</p>
+    <p class="muted">Guilherme Marcondes · Janeiro de 2024 · Estudos em Design · ULisboa</p>
   </header>
   <section>
     <p>
@@ -37,7 +45,7 @@
     <p>
       À medida que os entusiastas de jogos e desenvolvedores independentes abraçaram ideias
       expansivas e a criação de universos sem fim, os arquitetos por trás destes mundos encontraram
-      uma série de desafios penosos. Neste artigo, nós embarcaremos em uma jornada para explorar as
+      uma série de desafios penosos. Neste artigo, nós embarcaremos numa jornada para explorar as
       complexidades e dilemas inerentes à arte de construir mundos infinitos através do Design
       Procedural. Desde o balanço delicado entre a imprevisibilidade e a coerência, até as técnicas
       computacionais de geração de paisagens contínuas e os principais algoritmos utilizados neste
@@ -83,12 +91,12 @@
     </p>
     <p>
       Entre os principais benefícios do design procedural se destaca a escalabilidade, isto é, a
-      capacidade de expandir e replicar uma ideia ou programa em um determinado ambiente. O mais
-      comum é trabalhar do pequeno para o grande, por exemplo, ao invés de criar um texto inteiro de
-      uma vez, podemos começar por definir como é criado um agrupamento menor — palavras ou
-      parágrafos. Pode parecer simples a priori definir estes blocos mínimos de construção do nosso
-      mundo, mas o desafio se dá ao tentar deixá-los ao mesmo tempo flexíveis o suficiente para não
-      se tornarem repetitivos e controlados o bastante para não serem estranhos ou descontínuos.
+      capacidade de expandir e replicar uma ideia ou programa num determinado ambiente. O mais comum
+      é trabalhar do pequeno para o grande, por exemplo, ao invés de criar um texto inteiro de uma
+      vez, podemos começar por definir como é criado um agrupamento menor — palavras ou parágrafos.
+      Pode parecer simples a priori definir estes blocos mínimos de construção do nosso mundo, mas o
+      desafio se dá ao tentar deixá-los ao mesmo tempo flexíveis o suficiente para não se tornarem
+      repetitivos e controlados o bastante para não serem estranhos ou descontínuos.
     </p>
   </section>
   <section>
@@ -126,7 +134,7 @@
       consoante à dificuldade do nível.
     </p>
     <p>
-      O uso da geração procedural garante que os jogadores enfrentem uma experiência única, de forma
+      O uso da geração procedural garante que os jogadores enfrentnuma experiência única, de forma
       que o <i>layout</i> da masmorra, o local dos itens e o tipo de inimigos encontrados são diferentes
       a cada jogatina. Esta aleatoriedade aumenta a rejogabilidade e desafia o jogador a se adaptar a
       condições que sempre mudam.
@@ -154,7 +162,7 @@
     />
     <p>
       Para quem nunca o jogou, Minecraft trata-se de um jogo de aventura em que o jogador é colocado
-      em um mundo “infinito” e que possui animais e monstros que tentam matar o jogador e destruir
+      num mundo “infinito” e que possui animais e monstros que tentam matar o jogador e destruir
       suas construções. O mundo é constituído por blocos, sendo cada bloco a representação de um
       material específico como terra, grama, água, areia, pedra, etc. Estes blocos podem ser
       removidos ou adicionados como uma espécie de Lego virtual. Apesar de ser conhecido pela sua
@@ -237,10 +245,10 @@
     <p>
       A segunda fase, então, se destina a calcular a altura de cada coordenada do jogo.
       Primeiramente as cavernas são escavadas com um algoritmo conhecido como “Perlin Worms”, que
-      basicamente move uma esfera gentilmente em um local, removendo os blocos que lá estavam. O
+      basicamente move uma esfera gentilmente num local, removendo os blocos que lá estavam. O
       próprio nome já diz, o resultado é como se uma minhoca tivesse escavado uma porção de terra.
       Com isso, o mapa passa a possuir as cavernas onde depois o jogador poderá procurar por
-      minérios, passando por monstros, minas abandonadas e masmorras.
+      minérios, enfrentar monstros e explorar minas abandonadas e masmorras.
     </p>
     <Figure
       src="minecraft-cave.webp"
@@ -252,7 +260,7 @@
       Após a definição das cavernas, o algoritmo procede para definir a topografia do mapa. Para
       isso ele utiliza um <i>noise map</i> invertido: para cada ponto calcula um valor x e então
       remove x blocos a partir do topo do mapa (altura 320). O método para gerar o <i>noise map</i>
-      é o <i>Fractal Noise</i>, o qual possui várias camadas em que cada camada tem um nível de
+      é o <i>Fractal Noise</i>, o qual possui várias camadas em que cada camada tnum nível de
       contribuição diferente. Este método consegue gerar um efeito de continuidade no mapa à medida
       que adiciona pequenos detalhes, sem deformar de forma desproporcional a topografia do mapa.
     </p>
@@ -296,7 +304,7 @@
       fonems={['ɡrɐˈdjẽt(ə)']}
       definitions={[
         'Variação de uma grandeza ao longo de uma dimensão espacial, em determinada direção',
-        '[matemática] coeficiente angular (ou declive) da tangente de uma curva (em um dos seus pontos) e cujo valor é o da tangente trigonométrica da inclinação da tangente à curva (nos pontos em que tal tangente exista)'
+        '[matemática] coeficiente angular (ou declive) da tangente de uma curva (num dos seus pontos) e cujo valor é o da tangente trigonométrica da inclinação da tangente à curva (nos pontos em que tal tangente exista)'
       ]}
       fromText="Infopédia - Dicionários Porto Editora"
       fromLink="https://www.infopedia.pt/dicionarios/lingua-portuguesa/gradiente"
@@ -311,7 +319,7 @@
       Uma das formas de aumentar a definição e o controlo destes mapas de ruído é a criação de
       <i>Fractal Noises</i>. Os <i>Fractal Noises</i> são uma forma de combinar vários
       <i>noise maps</i>
-      em um só, de forma que cada um dos mapas contribua com uma porção do resultado final. Desta forma,
+      num só, de forma que cada um dos mapas contribua com uma porção do resultado final. Desta forma,
       é possível emular a complexidade de terrenos reais, que sofrem de erosão hidraulica, ação do vento,
       da vegetação, e assim por diante. A seguir, explicarei o que são os parâmetros encontrados nos
       <i>Fractal Noises</i>.
@@ -358,7 +366,7 @@
       Por fim, o <i>Fractal Noise</i> também possui um parâmetro chamado de <Em>persistência</Em>
       <i>(persistence)</i>. Este parâmetro define a influência de cada oitava no resultado final.
       Quanto maior o valor de <i>persistence</i>, mais influência cada oitava terá no resultado
-      final. Ao modificar este parametro, é possível alternar entre um resultado mais contínuo e
+      final. Ao modificar este parâmetro, é possível alternar entre um resultado mais contínuo e
       sutil ou mais granulado.
     </p>
     <Figure
@@ -371,14 +379,14 @@
       Com estes parâmetros, é possível gerar mapas de ruído com uma grande variedade de detalhes e
       complexidade. Estes mapas podem ser utilizados para gerar terrenos, texturas, vegetação,
       animais, e assim por diante. O interessante é perceber bem como cada um dos parâmetros
-      influencia o mapa final e formar diversas combinações de parametros que podem ser usadas para
+      influencia o mapa final e formar diversas combinações de parâmetros que podem ser usadas para
       fins diferentes. Por exemplo, um mapa com uma frequência alta e uma lacunaridade baixa pode
       ser utilizado para gerar texturas de pedra, enquanto um mapa com uma frequência baixa e uma
       lacunaridade alta pode ser utilizado para gerar texturas de nuvens.
     </p>
     <p>
       A seguir, poderá modificar os parâmetros de um <i>Fractal Noise</i> no <i>playground</i> interativo
-      abaixo e visualizar em tempo real o resultado em uma malha 3D.
+      abaixo e visualizar em tempo real o resultado numa malha 3D.
     </p>
   </section>
 
