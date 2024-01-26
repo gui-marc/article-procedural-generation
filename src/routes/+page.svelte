@@ -5,6 +5,7 @@
   import Note from '../lib/Note.svelte';
   import Link from '../lib/Link.svelte';
   import Em from '../lib/Em.svelte';
+  import Game from '../lib/procedural-generation-game/Game.svelte';
 </script>
 
 <svelte:head>
@@ -231,4 +232,6 @@
       grandiosidade do jogo.
     </p>
   </section>
+
+  <Game />
 </article>
