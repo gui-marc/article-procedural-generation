@@ -18,12 +18,18 @@
     color: 0xffffff
   };
 
+  let onUpdateParameters = () => {};
+
+  function changeParameter(parameter, value) {
+    console.log({ parameter, value });
+    PARAMETERS[parameter] = value;
+    onUpdateParameters();
+  }
+
   onMount(async () => {
     const THREE = await import('three');
     const { OrbitControls } = await import('three/examples/jsm/controls/OrbitControls.js');
     const noise = (await import('./noise')).default;
-
-    console.log({ noise });
 
     const canvas = document.getElementById('game-canvas');
     const renderer = new THREE.WebGLRenderer({ canvas });
@@ -113,6 +119,8 @@
       terrain.geometry.attributes.normal.needsUpdate = true;
     };
 
+    onUpdateParameters = updateTerrain;
+
     updateTerrain();
     initControls();
     initTerrain();
@@ -123,4 +131,73 @@
   });
 </script>
 
-<canvas id="game-canvas" />
+<div class="game">
+  <canvas id="game-canvas" />
+</div>
+
+<form class="controls">
+  <p><b>Parámetros </b></p>
+
+  <div class="inputs">
+    <label>
+      <input type="checkbox" on:change={(ev) => changeParameter('wireframe', ev.target.checked)} />
+      <span>Wireframe</span>
+    </label>
+
+    <label>
+      <span>Size</span>
+      <input
+        type="range"
+        min="10"
+        max="300"
+        step="1"
+        value={PARAMETERS.size}
+        on:change={(ev) => changeParameter('size', ev.target.value)}
+      />
+      <span>{PARAMETERS.size}</span>
+    </label>
+
+    <label>
+      <span>Resolução da Malha</span>
+      <input
+        type="range"
+        min="10"
+        max="300"
+        step="1"
+        value={PARAMETERS.resolution}
+        on:change={(ev) => changeParameter('resolution', ev.target.value)}
+      />
+      <span>{PARAMETERS.resolution}</span>
+    </label>
+  </div>
+</form>
+
+<style>
+  .game {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .controls {
+    max-width: var(--text-container-width);
+    margin-inline: auto;
+    background-color: var(--clr-background-ui);
+    border: 1px solid var(--clr-border-ui);
+    border-radius: var(--radii);
+    padding: 1rem;
+    width: 100%;
+    max-width: 275px;
+  }
+
+  .controls .inputs {
+    margin-top: 0.5rem;
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .controls p {
+    margin-top: 0;
+  }
+</style>

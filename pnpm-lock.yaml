@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  lil-gui:
+    specifier: ^0.19.1
+    version: 0.19.1
   lucide-svelte:
     specifier: ^0.316.0
     version: 0.316.0(svelte@4.2.9)
@@ -1147,6 +1150,10 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
     dev: true
+
+  /lil-gui@0.19.1:
+    resolution: {integrity: sha512-9dbIg+UxS8RIROI6OH5gV2KrVE0Cn37bcLOQGF2GKN8ibTxDrUSLzzZfkQR82LnZsgs7DEZOOGfn3zhtd6hk0Q==}
+    dev: false
 
   /lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}

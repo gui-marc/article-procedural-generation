@@ -34,7 +34,10 @@
   --clr-text-secondary: var(--sand-11);
   --clr-text-faded: var(--sand-10);
   --clr-background-app: var(--sand-1);
+
   --clr-background-ui: var(--sand-2);
+  --clr-background-ui-hover: var(--sand-3);
+  
   --clr-border-ui: var(--sand-4);
 
   --radii: 4px;
@@ -103,6 +106,7 @@ body {
   line-height: 1.5;
   color: var(--clr-text-primary);
   background-color: var(--clr-background-app);
+  scroll-behavior: smooth;
 }
 
 * {

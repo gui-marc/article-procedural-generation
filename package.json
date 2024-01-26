@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"lil-gui": "^0.19.1",
 		"lucide-svelte": "^0.316.0",
 		"three": "^0.160.1"
 	}
