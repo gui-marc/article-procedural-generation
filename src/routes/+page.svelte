@@ -2,6 +2,9 @@
   import Figure from '../lib/Figure.svelte';
   import Dictionary from '../lib/Dictionary.svelte';
   import Noise from '../lib/Noise.svelte';
+  import Note from '../lib/Note.svelte';
+  import Link from '../lib/Link.svelte';
+  import Em from '../lib/Em.svelte';
 </script>
 
 <svelte:head>
@@ -112,6 +115,10 @@
       cada jogatina. Esta aleatoriedade aumenta a rejogabilidade e desafia o jogador a se adaptar a
       condições que sempre mudam.
     </p>
+    <Note>
+      O jogo <i>Rogue</i> atualmente possui o código aberto e o mesmo pode ser encontrado em
+      <Link href="https://github.com/Davidslv/rogue" external>github.com/Davidslv/rogue</Link>.
+    </Note>
   </section>
   <section>
     <h3>Além dos blocos: navegando pelos mundos infinitos do Minecraft</h3>
@@ -148,11 +155,28 @@
     </p>
     <p>
       O código do jogo não é aberto, porém é possível obter uma versão quase completa através do
-      processo de descompilação do executável do jogo, que é escrito na linguagem Java. Desta forma,
-      a comunidade conseguiu estudar e perceber como funciona o algoritmo de geração de mundos do
-      Minecraft. Estes pedaços de códigos são amplamente utilizados por modificadores independentes,
+      processo de <Em>descompilação</Em> do executável do jogo, que é escrito na linguagem Java. Desta
+      forma, a comunidade conseguiu estudar e perceber como funciona o algoritmo de geração de mundos
+      do Minecraft. Estes pedaços de códigos são amplamente utilizados por modificadores independentes,
       que criam pacotes de biomas, ferramentas e até mecânicas de gameplay adicionais para o jogo.
     </p>
+    <Dictionary
+      term="descompilação"
+      type="nome feminino"
+      fromLink="https://dicionario.priberam.org/descompila%C3%A7%C3%A3o"
+      fromText="Descompilação - Dicionário Priberam da Língua Portuguesa"
+      definitions={[
+        '[Informática] Transformação de um código ou de uma linguagem que estava convertida para ser lida por um computador em linguagem de programação. = ENGENHARIA REVERSA'
+      ]}
+    />
+    <Note>
+      Um guia para obter o código descompilado do <i>Minecraft</i> pode ser encontrado em
+      <Link external href="https://minecraft.fandom.com/wiki/Tutorials/See_Minecraft%27s_code">
+        Minecraft Fandom - Tutorial/See Minecraft's code
+      </Link> ou com a ferramenta <Link href="https://github.com/Hexeption/MCP-Reborn"
+        >MCP-Reborn</Link
+      >.
+    </Note>
     <p>
       Tudo começa com o mapa de biomas. É a partir dele que o jogo determinará a forma com que cada
       região será gerada. Cada bioma é construído com a utilização de diversas camadas de

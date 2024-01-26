@@ -2,6 +2,19 @@
   --font-body: 'Lora', serif;
   --font-heading: 'Oswald', sans-serif;
 
+  --brown-1: #fefdfc;
+  --brown-2: #fcf9f6;
+  --brown-3: #f6eee7;
+  --brown-4: #f0e4d9;
+  --brown-5: #ebdaca;
+  --brown-6: #e4cdb7;
+  --brown-7: #dcbc9f;
+  --brown-8: #cea37e;
+  --brown-9: #ad7f58;
+  --brown-10: #a07553;
+  --brown-11: #815e46;
+  --brown-12: #3e332e;
+
   --sand-1: #fdfdfc;
   --sand-2: #f9f9f8;
   --sand-3: #f1f0ef;
@@ -15,6 +28,8 @@
   --sand-11: #63635e;
   --sand-12: #21201c;
 
+  --clr-primary: var(--brown-9);
+  --clr-primary-hover: var(--brown-10);
   --clr-text-primary: var(--sand-12);
   --clr-text-secondary: var(--sand-11);
   --clr-text-faded: var(--sand-10);
@@ -23,10 +38,26 @@
   --clr-border-ui: var(--sand-4);
 
   --radii: 4px;
+
+  --text-container-width: 700px;
+  --wrapper-container-width: 1000px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --brown-1: #12110f;
+    --brown-2: #1c1816;
+    --brown-3: #28211d;
+    --brown-4: #322922;
+    --brown-5: #3e3128;
+    --brown-6: #4d3c2f;
+    --brown-7: #614a39;
+    --brown-8: #7c5f46;
+    --brown-9: #ad7f58;
+    --brown-10: #b88c67;
+    --brown-11: #dbb594;
+    --brown-12: #f2e1ca;
+
     --sand-1: #111110;
     --sand-2: #191918;
     --sand-3: #222221;
@@ -41,6 +72,29 @@
     --sand-12: #eeeeec;
   }
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+em,
+i,
+b,
+strong,
+small,
+li {
+  font-size: inherit;
+  &::selection {
+    background-color: var(--sand-6);
+    color: var(--sand-12);
+  }
+}
+
 
 html,
 body {
@@ -60,7 +114,7 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: var(--wrapper-container-width);
   margin-inline: auto;
   padding: min(10rem, 10vh) 1.5rem;
 }
@@ -72,18 +126,15 @@ body {
 .container > * > h4,
 .container > * > h5,
 .container > * > h6 {
-  max-width: 740px;
+  max-width: var(--text-container-width);
   margin-inline: auto;
   margin-block: 1.25rem;
-
-  &::selection {
-    background-color: var(--sand-6);
-    color: var(--sand-12);
-  }
 }
 
 .container header h1 {
   margin-bottom: 0.5rem;
+  max-width: 550px;
+  margin-left: 0;
 }
 
 .container header p {
@@ -92,6 +143,8 @@ body {
 
 .container header {
   margin-bottom: 3rem;
+  max-width: var(--text-container-width);
+  margin-inline: auto;
 }
 
 .container > section:not(:last-child) {
@@ -133,3 +186,4 @@ ul,
 li {
   list-style: none;
 }
+

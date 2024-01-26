@@ -1,4 +1,6 @@
 <script>
+  import Link from './Link.svelte';
+
   export let term;
   export let fonems = [];
   export let type;
@@ -31,20 +33,24 @@
 
   {#if fromText}
     <div class="dictionary__footer muted">
-      <a href={fromLink}>{fromText}</a>
+      <Link href={fromLink} external>{fromText}</Link>
     </div>
   {/if}
 </div>
 
 <style>
   .dictionary {
-    max-width: calc(740px + 3rem);
+    max-width: calc(var(--text-container-width) + 3rem);
     padding: 1.5rem;
     margin-inline: auto;
     margin-block: 1.5rem;
     background-color: var(--clr-background-ui);
     border: 1px solid var(--clr-border-ui);
     border-radius: var(--radii);
+  }
+
+  .dictionary h4 {
+    font-size: 1.125rem;
   }
 
   .dictionary .dictionary__head {
@@ -63,11 +69,5 @@
 
   li {
     margin-top: 0.25rem;
-  }
-
-  a {
-    color: var(--clr-text-secondary);
-    text-decoration: underline;
-    text-underline-offset: 2px;
   }
 </style>

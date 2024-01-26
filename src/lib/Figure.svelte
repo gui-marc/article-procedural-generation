@@ -20,7 +20,7 @@
   figure {
     width: 100%;
     margin-inline: auto;
-    max-width: 740px;
+    max-width: var(--text-container-width);
   }
 
   figure.fullWidth {
@@ -36,7 +36,7 @@
   }
 
   figure figcaption {
-    max-width: 740px;
+    max-width: var(--text-container-width);
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     margin-top: 0.5rem;
