@@ -341,7 +341,13 @@
       gerar detalhes cada vez menores, o que é mais próximo da realidade
     </p>
     <p>
-      Por fim, o <i>Fractal Noise</i> também possui um parâmetro chamado de <Em>persistence</Em>
+      Ao final, o algoritmo combina todos esses valores, os normaliza, isto é, os coloca entre 0 e
+      1, e os potencializa a um valor chamado <Em>exponenciação</Em>. Este valor é responsável por
+      definir a velocidade em que o mapa aumenta de tamanho, ou seja, se o valor for 1, aumenta de
+      forma linear e se for 2, de forma quadrática.
+    </p>
+    <p>
+      Por fim, o <i>Fractal Noise</i> também possui um parâmetro chamado de <Em>persistência</Em>
       <i>(persistence)</i>. Este parâmetro define a influência de cada oitava no resultado final.
       Quanto maior o valor de <i>persistence</i>, mais influência cada oitava terá no resultado
       final. Ao modificar este parametro, é possível alternar entre um resultado mais contínuo e
@@ -364,9 +370,19 @@
     </p>
     <p>
       A seguir, poderá modificar os parâmetros de um <i>Fractal Noise</i> no <i>playground</i> interativo
-      abaixo.
+      abaixo e visualizar em tempo real o resultado em uma malha 3D.
     </p>
   </section>
 
   <Game />
+
+  <section>
+    <Note>
+      O código deste <i>playground</i> foi feito por mim e está disponível em
+      <Link
+        href="https://github.com/gui-marc/article-procedural-generation/blob/main/src/lib/procedural-generation-game/Game.svelte"
+        external>GitHub</Link
+      >
+    </Note>
+  </section>
 </article>

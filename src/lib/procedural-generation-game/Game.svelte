@@ -1,5 +1,7 @@
 <script>
   import { onMount } from 'svelte';
+  import RangeSlider from '../RangeSlider.svelte';
+  import Checkbox from '../Checkbox.svelte';
 
   let NOISE_PARAMETERS = {
     seed: 2000,
@@ -14,15 +16,19 @@
   let PARAMETERS = {
     size: 100,
     resolution: 128,
-    wireframe: false,
+    wireframe: true,
     color: 0xffffff
   };
 
   let onUpdateParameters = () => {};
 
   function changeParameter(parameter, value) {
-    console.log({ parameter, value });
     PARAMETERS[parameter] = value;
+    onUpdateParameters();
+  }
+
+  function changeNoiseParameter(parameter, value) {
+    NOISE_PARAMETERS[parameter] = value;
     onUpdateParameters();
   }
 
@@ -132,45 +138,95 @@
 </script>
 
 <div class="game">
-  <canvas id="game-canvas" />
-</div>
+  <form class="controls">
+    <p><b>Opções</b></p>
 
-<form class="controls">
-  <p><b>Parámetros </b></p>
+    <div class="inputs">
+      <Checkbox
+        label="Mostrar Estrutura em Arame"
+        value={PARAMETERS.wireframe}
+        onChange={(e) => changeParameter('wireframe', e.target.checked)}
+      />
 
-  <div class="inputs">
-    <label>
-      <input type="checkbox" on:change={(ev) => changeParameter('wireframe', ev.target.checked)} />
-      <span>Wireframe</span>
-    </label>
-
-    <label>
-      <span>Size</span>
-      <input
-        type="range"
+      <RangeSlider
+        label="Tamanho do Mapa"
+        onChange={(ev) => changeParameter('size', ev.target.value)}
         min="10"
         max="300"
         step="1"
         value={PARAMETERS.size}
-        on:change={(ev) => changeParameter('size', ev.target.value)}
       />
-      <span>{PARAMETERS.size}</span>
-    </label>
 
-    <label>
-      <span>Resolução da Malha</span>
-      <input
-        type="range"
+      <RangeSlider
+        label="Resolução da Malha"
+        onChange={(ev) => changeParameter('resolution', ev.target.value)}
         min="10"
         max="300"
         step="1"
         value={PARAMETERS.resolution}
-        on:change={(ev) => changeParameter('resolution', ev.target.value)}
       />
-      <span>{PARAMETERS.resolution}</span>
-    </label>
-  </div>
-</form>
+    </div>
+
+    <p><b>Parâmetros Fractal Noise</b></p>
+
+    <div class="inputs">
+      <RangeSlider
+        label="Escala"
+        onChange={(ev) => changeNoiseParameter('scale', ev.target.value)}
+        min="50"
+        max="300"
+        step="1"
+        value={NOISE_PARAMETERS.scale}
+      />
+
+      <RangeSlider
+        label="Oitavas"
+        min="1"
+        max="10"
+        step="1"
+        value={NOISE_PARAMETERS.octaves}
+        onChange={(e) => changeNoiseParameter('octaves', e.target.value)}
+      />
+
+      <RangeSlider
+        label="Persistência"
+        min="0"
+        max="1"
+        step="0.01"
+        value={NOISE_PARAMETERS.persistence}
+        onChange={(e) => changeNoiseParameter('persistence', e.target.value)}
+      />
+
+      <RangeSlider
+        label="Lacunaridade"
+        min="0"
+        max="3"
+        step="0.1"
+        value={NOISE_PARAMETERS.lacunarity}
+        onChange={(e) => changeNoiseParameter('lacunarity', e.target.value)}
+      />
+
+      <RangeSlider
+        label="Exponenciação"
+        min="0"
+        max="10"
+        step="0.1"
+        value={NOISE_PARAMETERS.exponentiation}
+        onChange={(e) => changeNoiseParameter('exponentiation', e.target.value)}
+      />
+
+      <RangeSlider
+        label="Altura"
+        min="0"
+        max="150"
+        step="1"
+        value={NOISE_PARAMETERS.height}
+        onChange={(e) => changeNoiseParameter('height', e.target.value)}
+      />
+    </div>
+  </form>
+  <canvas id="game-canvas" />
+</div>
 
 <style>
   .game {
@@ -178,26 +234,44 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    margin-inline: auto;
   }
 
   .controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(-275px - 1rem);
     max-width: var(--text-container-width);
     margin-inline: auto;
     background-color: var(--clr-background-ui);
     border: 1px solid var(--clr-border-ui);
     border-radius: var(--radii);
     padding: 1rem;
-    width: 100%;
-    max-width: 275px;
+    width: 275px;
   }
 
   .controls .inputs {
     margin-top: 0.5rem;
     display: grid;
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
 
   .controls p {
-    margin-top: 0;
+    font-size: 0.875rem;
+  }
+
+  .controls p:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  #game-canvas {
+    display: block;
+    margin-inline: auto;
+    margin-block: 2rem;
+    border: 1px solid var(--clr-border-ui);
+    border-radius: var(--radii);
+    width: 100%;
+    height: 500px;
   }
 </style>
