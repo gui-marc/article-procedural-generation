@@ -189,7 +189,7 @@
       Um guia para obter o código descompilado do <i>Minecraft</i> pode ser encontrado em
       <Link external href="https://minecraft.fandom.com/wiki/Tutorials/See_Minecraft%27s_code">
         Minecraft Fandom - Tutorial/See Minecraft's code
-      </Link> ou com a ferramenta <Link href="https://github.com/Hexeption/MCP-Reborn"
+      </Link> ou com a ferramenta <Link external href="https://github.com/Hexeption/MCP-Reborn"
         >MCP-Reborn</Link
       >.
     </Note>
@@ -399,4 +399,62 @@
       >
     </Note>
   </section>
+
+  <section class="references">
+    <h3>Referências</h3>
+    <p>
+      <Link external href="https://robertheaton.com/2018/12/17/wavefunction-collapse-algorithm/"
+        >The Wavefunction Collapse Algorithm explained very clearly - Robert Heaton</Link
+      >
+    </p>
+    <p>
+      <Link external href="https://www.alanzucconi.com/2022/06/05/minecraft-world-generation/"
+        >The World Generation of Minecraft - Alan Zucconi</Link
+      >
+    </p>
+    <p>
+      <Link external href="https://www.maizure.org/projects/decoded-rogue/index.html"
+        >Decoded: Rogue - MaiZure's Projects</Link
+      >
+    </p>
+    <p>
+      <Link external href="https://eis.ucsc.edu/papers/Mason_Lume.pdf"
+        >Lume: A System for Procedural Story Generation - Stacey Mason</Link
+      >
+    </p>
+    <p>
+      <Link external href="https://www.voxelquest.com/news/how-does-it-work"
+        >How Does it Work - Voxel Quest</Link
+      >
+    </p>
+    <p>
+      <Link
+        external
+        href="https://www.amazon.com/Procedural-Storytelling-Design-Tanya-Short/dp/1138595314"
+        >Procedural Storytelling in Game Design – Tanya X. Short (Editor), Tarn Adams (Editor) –
+        2019</Link
+      >
+    </p>
+    <p>
+      <Link external href="https://www.youtube.com/@SebastianLague"
+        >Coding Adventures - Sebastian Lague</Link
+      >
+    </p>
+    <p>
+      <Link
+        external
+        href="https://www.youtube.com/watch?v=hHGshzIXFWY&list=PLRL3Z3lpLmH3PNGZuDNf2WXnLTHpN9hXy"
+        >3D World Generation - Youtube Series - Simon Dev</Link
+      >
+    </p>
+    <p>
+      <Link external href="https://threejs.org/">Documentação Three.js</Link>
+    </p>
+  </section>
 </article>
+
+<style>
+  .references {
+    margin-top: 8rem;
+  }
+</style>
