@@ -235,6 +235,15 @@
         value={NOISE_PARAMETERS.height}
         onChange={(e) => changeNoiseParameter('height', e.target.value)}
       />
+
+      <RangeSlider
+        label="Semente"
+        min="0"
+        max="10000"
+        step="100"
+        value={NOISE_PARAMETERS.seed}
+        onChange={(e) => changeNoiseParameter('seed', parseInt(e.target.value))}
+      />
     </div>
   </form>
   <canvas id="game-canvas" />
