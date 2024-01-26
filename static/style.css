@@ -75,6 +75,11 @@ body {
   max-width: 740px;
   margin-inline: auto;
   margin-block: 1.25rem;
+
+  &::selection {
+    background-color: var(--sand-6);
+    color: var(--sand-12);
+  }
 }
 
 .container header h1 {

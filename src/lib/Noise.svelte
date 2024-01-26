@@ -1,9 +1,9 @@
-<svg class="noise" width="100%" height="100%"
-  ><filter id="pedroduarteisalegend"
-    ><feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"
-    ></feTurbulence></filter
-  ><rect width="100%" height="100%" filter="url(#pedroduarteisalegend)"></rect></svg
->
+<svg class="noise" width="100%" height="100%">
+  <filter id="pedroduarteisalegend">
+    <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch" />
+  </filter>
+  <rect width="100%" height="100%" filter="url(#pedroduarteisalegend)" />
+</svg>
 
 <style>
   .noise {
@@ -11,7 +11,14 @@
     position: fixed;
     z-index: 50;
     isolation: isolate;
-    opacity: 0.8;
-    mix-blend-mode: soft-light;
+    opacity: 0.25;
+    mix-blend-mode: darken;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .noise {
+      opacity: 0.8;
+      mix-blend-mode: soft-light;
+    }
   }
 </style>
