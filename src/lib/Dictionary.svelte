@@ -44,7 +44,7 @@
     margin-block: 1.5rem;
     background-color: var(--clr-background-ui);
     border: 1px solid var(--clr-border-ui);
-    border-radius: 8px;
+    border-radius: var(--radii);
   }
 
   .dictionary .dictionary__head {

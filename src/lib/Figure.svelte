@@ -29,9 +29,10 @@
   }
 
   figure img {
-    border-radius: 8px;
+    border-radius: var(--radii);
     width: 100%;
     height: auto;
+    border: 1px solid var(--clr-border-ui);
   }
 
   figure figcaption {
