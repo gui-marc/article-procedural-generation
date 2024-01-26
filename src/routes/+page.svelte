@@ -1,11 +1,14 @@
 <script>
   import Figure from '../lib/Figure.svelte';
   import Dictionary from '../lib/Dictionary.svelte';
+  import Noise from '../lib/Noise.svelte';
 </script>
 
 <svelte:head>
   <title>Design Procedural: Os desafios na criação de mundos infinitos</title>
 </svelte:head>
+
+<Noise />
 
 <article class="container">
   <header>
