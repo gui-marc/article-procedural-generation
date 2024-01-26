@@ -7,19 +7,15 @@
   export let definitions = [];
   export let fromText;
   export let fromLink;
+
+  const fonemText = fonems.map((f) => `|${f}|`).join(' ou ');
 </script>
 
 <div class="dictionary">
   <h4><i>{term}</i></h4>
 
   <p class="dictionary__head muted">
-    {#each fonems as fonem, index}
-      <span>|{fonem}|</span>
-
-      {#if index < fonems.length - 1}
-        <span>ou</span>
-      {/if}
-    {/each}
+    {fonemText}
   </p>
 
   <div class="dictionary__details muted">
