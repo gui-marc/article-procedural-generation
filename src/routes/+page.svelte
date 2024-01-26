@@ -12,8 +12,8 @@
 
 <article class="container">
   <header>
-    <h1>Design Procedural</h1>
-    <p class="muted">Os Desafios na criação de mundos infinitos</p>
+    <h1>Design Procedural: Os Desafios na criação de mundos infinitos</h1>
+    <p class="muted">Guilherme Marcondes · Janeiro de 2024</p>
   </header>
   <section>
     <p>
@@ -40,7 +40,7 @@
       type="adjetivo"
       fonems={['prəˈsiː.dʒɚ.əl', 'prəˈsiː.dʒər.əl']}
       definitions={[
-        'relativo a um procedimento ou processo',
+        'Relativo a um procedimento ou processo.',
         '[Informática] Programação Procedural. Sequência de processos que devem ser executados por um programa, seguindo a linguagem específica que lhe é particular.'
       ]}
       fromText="Dicionário Online de Português (Adaptado)"

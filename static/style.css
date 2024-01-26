@@ -72,6 +72,18 @@ body {
   margin-block: 1.25rem;
 }
 
+.container header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.container header p {
+  margin-top: 0.5rem;
+}
+
+.container header {
+  margin-bottom: 3rem;
+}
+
 .container > section:not(:last-child) {
   margin-bottom: 3rem;
 }
