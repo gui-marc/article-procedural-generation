@@ -6,6 +6,13 @@
   import Link from '../lib/Link.svelte';
   import Em from '../lib/Em.svelte';
   import Game from '../lib/procedural-generation-game/Game.svelte';
+  import { onMount } from 'svelte';
+
+  let isMobile = false;
+
+  onMount(() => {
+    isMobile = window.innerWidth < 768;
+  });
 </script>
 
 <svelte:head>
@@ -342,9 +349,10 @@
     </p>
     <p>
       Ao final, o algoritmo combina todos esses valores, os normaliza, isto é, os coloca entre 0 e
-      1, e os potencializa a um valor chamado <Em>exponenciação</Em>. Este valor é responsável por
-      definir a velocidade em que o mapa aumenta de tamanho, ou seja, se o valor for 1, aumenta de
-      forma linear e se for 2, de forma quadrática.
+      1, e os potencializa pelo inverso de um valor chamado <Em>exponenciação</Em>. Este valor é
+      responsável por definir a velocidade em que o mapa aumenta de tamanho, ou seja, se o valor for
+      1, aumenta de forma linear e se for 2, aumenta o equivalente a metade e assim por diante.
+      Quanto maior o valor da exponenciação, mais plano o mapa fica.
     </p>
     <p>
       Por fim, o <i>Fractal Noise</i> também possui um parâmetro chamado de <Em>persistência</Em>
@@ -374,7 +382,13 @@
     </p>
   </section>
 
-  <Game />
+  {#if !isMobile}
+    <Game />
+  {:else}
+    <section>
+      <Note>Infelizmente o playground ainda não é suportado em dispositivos móveis</Note>
+    </section>
+  {/if}
 
   <section>
     <Note>

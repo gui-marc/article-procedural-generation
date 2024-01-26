@@ -38,6 +38,15 @@
     const noise = (await import('./noise')).default;
 
     const canvas = document.getElementById('game-canvas');
+
+    const getWidth = () => {
+      return parseInt(window.getComputedStyle(canvas).width);
+    };
+
+    const getHeight = () => {
+      return parseInt(window.getComputedStyle(canvas).height);
+    };
+
     const renderer = new THREE.WebGLRenderer({ canvas });
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 1000);
@@ -81,13 +90,16 @@
     };
 
     const initRenderer = () => {
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      console.log(getWidth(), getHeight());
+      renderer.setSize(getWidth(), getHeight(), false);
       renderer.setPixelRatio(window.devicePixelRatio);
     };
 
     const initCamera = () => {
       camera.position.set(25, 25, 25);
       camera.lookAt(0, 0, 0);
+      camera.aspect = getWidth() / getHeight();
+      camera.updateProjectionMatrix();
     };
 
     const update = () => {
@@ -208,7 +220,7 @@
 
       <RangeSlider
         label="Exponenciação"
-        min="0"
+        min="1"
         max="10"
         step="0.1"
         value={NOISE_PARAMETERS.exponentiation}
@@ -230,7 +242,9 @@
 
 <style>
   .game {
-    position: relative;
+    display: grid;
+    grid-template-columns: 275px auto;
+    gap: 1rem;
     width: 100%;
     height: 100%;
     z-index: 0;
@@ -238,12 +252,6 @@
   }
 
   .controls {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: calc(-275px - 1rem);
-    max-width: var(--text-container-width);
-    margin-inline: auto;
     background-color: var(--clr-background-ui);
     border: 1px solid var(--clr-border-ui);
     border-radius: var(--radii);
@@ -267,11 +275,29 @@
 
   #game-canvas {
     display: block;
-    margin-inline: auto;
-    margin-block: 2rem;
     border: 1px solid var(--clr-border-ui);
     border-radius: var(--radii);
+    min-height: 500px;
+    height: 100%;
     width: 100%;
-    height: 500px;
+    max-width: calc(var(--container-width) - 275px - 1rem);
+  }
+
+  @media screen and (min-width: 1500px) {
+    .game {
+      position: relative;
+      display: block;
+    }
+
+    .controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(-275px - 1rem);
+    }
+
+    #game-canvas {
+      width: 100%;
+    }
   }
 </style>
